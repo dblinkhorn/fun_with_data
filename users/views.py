@@ -17,6 +17,9 @@ def register(request):
     return render(request, 'users/register.html', {'form': form})
 
 
+# decorator to alter functionality of profile function.
+# this decorator makes profile function return the login page
+# if the user is not already logged in
 @login_required
 def profile(request):
     return render(request, 'users/profile.html')
